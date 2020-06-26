@@ -49,21 +49,6 @@ Use verify [file] to test your solution and see how it does. When you are finish
 '''
 
 
-'''
-解法基本上就是長出無限擴展的鏡像平面
-只要能射到敵人在鏡像中的位置，就保證在原本的空間內可以多次反彈擊中真實的敵人(數學基礎)
-
-但藏有很多陷阱：
- 1. 要考慮連續反彈的例子
- 2. 要濾掉同方向的重複射線
- 3. 要濾掉會射中自己的情況，射中自己又包含三種類型
-    一種是直接射到牆角，一種是垂直射到牆壁，這兩種都是原方向反彈很容易理解
-    第三種是雖然沒設到牆角，也確實是會射中敵人的路線，但是在射到敵人前會先反彈到自己
-
-最後就是實作上的效率，如何有效的從短到長訪問過所有的鏡像點，以及何時停止繞圈
-'''
-
-
 def solution(dimensions, your_position, guard_position, distance):
     # Your code here
     w, h = dimensions
